@@ -6,7 +6,7 @@ const UpdateNotifyToolScene = preload("updater/update_notify_tool.tscn")
 var update_notify_tool_instance: Node
 
 func _enter_tree() -> void:
-	MyPluginSettings.set_update_notification()
+	#MyPluginSettings.set_update_notification()
 	_setup_updater()
 	
 	if not DirAccess.dir_exists_absolute(MyPluginSettings.PluginTemporaryReleaseUpdateDirectoryPath):
@@ -23,7 +23,7 @@ func _enter_tree() -> void:
 	
 
 func _exit_tree() -> void:
-	MyPluginSettings.remove_settings()
+	#MyPluginSettings.remove_settings()
 	
 	if update_notify_tool_instance:
 		update_notify_tool_instance.free()
