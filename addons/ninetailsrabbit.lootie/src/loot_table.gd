@@ -45,8 +45,10 @@ func generate(times: int = 1) -> Array[LootItem]:
 				items_looted.assign(remove_duplicates(items_looted))
 		
 	mirrored_items.clear()
-	
-	return pick_random_values(items_looted, max_picks + size_that_does_not_count_on_loot_limit) if max_picks > 0 else items_looted
+	if max_picks > 0:
+		items_looted.assign(pick_random_values(items_looted, max_picks + size_that_does_not_count_on_loot_limit))
+
+	return items_looted
 
 ## Remove the items that are unique and can be only dropped once from this loot table
 func remove_unique_items(items: Array[LootItem]) -> void:

@@ -6,7 +6,7 @@ class_name LootItemChance extends Resource
 @export_range(-1.0, 1.0, 0.001) var deviation: float = 0.0
 
 
-func _init(chance: float, _deviation: float = 0.0) -> void:
+func _init(chance: float = 0.0, _deviation: float = 0.0) -> void:
 	value = chance
 	deviation = _deviation
 
